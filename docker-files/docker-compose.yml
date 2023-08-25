@@ -5,7 +5,7 @@ services:
      ports:
      - "8001-8082:80"
      deploy:
-          replicas: 2
+        replicas: 2
      depends_on:
      - mysql
    mysql:
