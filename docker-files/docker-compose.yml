@@ -3,11 +3,13 @@ services:
    web:
      image: "${DOCKER_IMAGE}"
      ports:
-     - 8001:80
+     - "8001-8082:80"
+     deploy:
+          replicas: 2
      depends_on:
      - mysql
    mysql:
-     image: devopstrainer/java-mvn-privaterepos:mysql
+     image: naveen12333/repo1:mysql
      volumes:
      - db_data:/var/lib/mysql
      environment:
